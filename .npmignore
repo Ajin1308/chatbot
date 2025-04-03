@@ -1,0 +1,7 @@
+# Source files
+src/
+examples/
+tests/
+/node_modules
+.env
+tsconfig.ts
