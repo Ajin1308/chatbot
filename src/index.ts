@@ -1,3 +1,3 @@
 // src/index.ts
-export { Chatbot }  from './components/Chatbot';
-export type { ChatbotProps, Message, Theme, Position } from './types';
+export { default as Chatbot } from './Chatbot';
+export type { ChatbotProps } from './Chatbot'; // If you have types to export

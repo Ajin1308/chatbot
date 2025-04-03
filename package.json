@@ -1,10 +1,10 @@
 {
   "name": "universal-chatbot",
-  "version": "1.0.2",
+  "version": "1.0.8",
   "description": "A customizable chatbot widget for any website",
   "type": "module",
-  "main": "dist/chatbot.js",
-  "module": "dist/chatbot.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "author": "ajint2305",
   "license": "MIT",
@@ -12,35 +12,20 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "test": "jest"
+    "build": "tsup"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react": "^18.0.0 || ^19.0.0 || ^20.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0 || ^20.0.0",
+    "tailwindcss": "^3.0.0"
   },
   "devDependencies": {
-    "@rollup/plugin-replace": "^6.0.2",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@types/react": "^19.1.0",
-    "tslib": "^2.8.1"
+    "@types/react": "^18.0.0",
+    "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@rollup/plugin-commonjs": "^28.0.3",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-typescript": "^12.1.2",
-    "@types/marked": "^5.0.2",
-    "@types/react-dom": "^19.1.1",
-    "autoprefixer": "^10.4.21",
     "lucide-react": "^0.487.0",
     "marked": "^15.0.7",
-    "postcss": "^8.5.3",
-    "rollup": "^4.39.0",
-    "rollup-plugin-dts": "^6.2.1",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-postcss-modules": "^2.1.1",
-    "tailwindcss": "^4.1.1"
+    "tsup": "^8.4.0"
   }
 }
