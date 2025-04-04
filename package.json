@@ -1,13 +1,19 @@
 {
   "name": "universal-chatbot",
-  "version": "1.0.8",
+  "version": "1.0.12",
   "description": "A customizable chatbot widget for any website",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "ajint2305",
-  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],

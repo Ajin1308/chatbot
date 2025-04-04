@@ -1,4 +1,3 @@
-// src/components/Chatbot.tsx
 import { useState, useEffect, useRef } from 'react';
 import type React from "react"
 import { marked } from 'marked';
@@ -6,8 +5,8 @@ import { HelpCircle, Search, XIcon } from 'lucide-react';
 
 export interface ChatbotProps {
   apiUrl: string
-  boticon?: string
-  chatboticon?: string
+  boticon: string
+  chatboticon: string
   position: "bottom-right" | "bottom-left" | "top-right" | "top-left" | "center"
   theme: {
     primaryColor: string
@@ -35,10 +34,7 @@ export default function Chatbot({ position, apiUrl, theme, boticon, chatboticon 
   const chatContentRef = useRef<HTMLDivElement>(null)
   const lottiePlayerRef = useRef<HTMLElement | null>(null)
   const [parsedMessages, setParsedMessages] = useState<Record<number, string>>({})
-  
-  boticon="/bot9.png"
-  chatboticon="/bot.png"
-  
+
   // Position styles based on the position prop
   const getPositionStyle = (isButton = false) => {
     const offset = isButton ? "35px" : "20px"
@@ -334,7 +330,7 @@ export default function Chatbot({ position, apiUrl, theme, boticon, chatboticon 
   const handleInviteSelection = (option: string) => {
     setIsOpen(true)
     setShowInviteMessage(false)
-    
+  
     // Add a small delay to ensure the chat window is open before sending the message
     setTimeout(() => {
       sendPredefinedMessage(option)
@@ -417,7 +413,7 @@ export default function Chatbot({ position, apiUrl, theme, boticon, chatboticon 
       position: "fixed", // TypeScript should now infer the correct type
       zIndex: 999, // Ensures compatibility with TS expectations
     } as React.CSSProperties; // Type assertion
-  
+
     if (position === "bottom-right") {
       style.bottom = "120px";
       style.right = "50px";
@@ -435,9 +431,9 @@ export default function Chatbot({ position, apiUrl, theme, boticon, chatboticon 
       style.left = "50%";
       style.transform = "translateX(-50%)";
     }
-  
+
     return style;
-  };  
+  };
 
   return (
     <>
@@ -456,7 +452,7 @@ export default function Chatbot({ position, apiUrl, theme, boticon, chatboticon 
                 <XIcon size={20} color="black" />
               </button>
           </div>
-          
+        
           <div className="flex gap-3">
             {/* Find a Product Button */}
             <button 
@@ -476,7 +472,7 @@ export default function Chatbot({ position, apiUrl, theme, boticon, chatboticon 
               Ask a question
             </button>
           </div>
-          
+        
           <style>{`
             @keyframes fadeIn {
               from { opacity: 0; transform: translateY(10px); }
@@ -797,7 +793,7 @@ export default function Chatbot({ position, apiUrl, theme, boticon, chatboticon 
       </div>
 
       {/* Keyframes for float animation */}
-      <style>{`        
+      <style>{`      
         .typing-dot {
           animation: typing 1.5s infinite;
           opacity: 0.3;
@@ -811,7 +807,7 @@ export default function Chatbot({ position, apiUrl, theme, boticon, chatboticon 
         .typing-dot:nth-child(3) {
           animation-delay: 1s;
         }
-        
+      
         @keyframes typing {
           0% {
             opacity: 0.3;
